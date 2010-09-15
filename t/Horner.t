@@ -18,7 +18,7 @@
 # with Math-Polynomial-Horner.  If not, see <http://www.gnu.org/licenses/>.
 
 
-use 5.010;
+use 5.004;
 use strict;
 use warnings;
 use Test::More tests => 168;

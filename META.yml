@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               Math-Polynomial-Horner
-version:            1
+version:            2
 abstract:           Stringizing Math::Polyomial objects in Horner form.
 author:
     - Kevin Ryde <user42@zip.com.au>

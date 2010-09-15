@@ -24,7 +24,7 @@ use vars '$VERSION';
 # uncomment this to run the ### lines
 #use Smart::Comments;
 
-$VERSION = 1;
+$VERSION = 2;
 
 sub _stringize {
   return "$_[0]";
