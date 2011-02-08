@@ -23,6 +23,40 @@ use warnings;
 use Math::Polynomial;
 
 {
+  sub upwards {
+    my ($x) = @_;
+    return (((($x + 1)*$x + 1)*$x + 1)*$x + 1);
+  }
+  sub downwards {
+    my ($x) = @_;
+    return (1 + $x*(1 + $x*(1 + $x*(1 + $x))));
+  }
+  sub pluseq {
+    my ($x) = @_;
+    my $ret = $x;
+    $ret += 1;
+    $ret *= $x;
+    $ret += 1;
+    $ret *= $x;
+    $ret += 1;
+    $ret *= $x;
+    $ret += 1;
+    return $ret;
+  }
+  sub swapend {
+    my ($x) = @_;
+    return (-$x**2+1);
+  }
+
+  require B::Concise;
+  B::Concise::compile('-exec',\&upwards)->();
+  B::Concise::compile('-exec',\&downwards)->();
+  B::Concise::compile('-exec',\&pluseq)->();
+  B::Concise::compile('-exec',\&swapend)->();
+  exit 0;
+}
+
+{
   require Math::BigRat;
   my $p = Math::Polynomial->new(Math::BigRat->new(0));
   $p = $p->interpolate([ 4,5,6,7 ], [25,39,56,76]);
@@ -40,6 +74,7 @@ use Math::Polynomial;
   # say $p->as_string({fold_sign => 1});      # '(2 x^3 - 3 x)'
   exit 0;
 }
+
 
 {
   Math::Polynomial->string_config ({ fold_sign => 1,
@@ -62,34 +97,5 @@ use Math::Polynomial;
   exit 0;
 }
 
-
-{
-  require B::Concise;
-  B::Concise::compile('-exec',\&upwards)->();
-  B::Concise::compile('-exec',\&downwards)->();
-  B::Concise::compile('-exec',\&pluseq)->();
-  exit 0;
-}
-
 # Math::Polynomial::Horner
 
-sub upwards {
-  my ($x) = @_;
-  return (((($x + 1)*$x + 1)*$x + 1)*$x + 1);
-}
-sub downwards {
-  my ($x) = @_;
-  return (1 + $x*(1 + $x*(1 + $x*(1 + $x))));
-}
-sub pluseq {
-  my ($x) = @_;
-  my $ret = $x;
-  $ret += 1;
-  $ret *= $x;
-  $ret += 1;
-  $ret *= $x;
-  $ret += 1;
-  $ret *= $x;
-  $ret += 1;
-  return $ret;
-}

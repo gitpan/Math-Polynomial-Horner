@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# Copyright 2010 Kevin Ryde
+# Copyright 2010, 2011 Kevin Ryde
 
 # This file is part of Math-Polynomial-Horner.
 #
@@ -17,7 +17,7 @@
 # You should have received a copy of the GNU General Public License along
 # with Math-Polynomial-Horner.  If not, see <http://www.gnu.org/licenses/>.
 
-use 5.004;
+use 5.006;
 use strict;
 use warnings;
 use ExtUtils::MakeMaker;
@@ -29,28 +29,28 @@ MyMakeMakerExtras::WriteMakefile
    ABSTRACT     => 'Stringizing Math::Polyomial objects in Horner form.',
    VERSION_FROM => 'lib/Math/Polynomial/Horner.pm',
    PREREQ_PM    => {
-                    'warnings' => 1,
-                    'Test::More' => 0,
                     'Math::Polynomial' => 1,
+                    'Test::More' => 0,
                    },
    AUTHOR       => 'Kevin Ryde <user42@zip.com.au>',
    LICENSE      => 'gpl',
    SIGN         => 1,
-   MIN_PERL_VERSION => 5.004,
+   # Math::Polynomial itself is 5.006
+   MIN_PERL_VERSION => 5.006,
 
-   META_MERGE
-   => { resources
-        => { homepage
-             => 'http://user42.tuxfamily.org/math-polynomial-horner/index.html',
-           },
-        optional_features
-        => { maximum_devel
-             => { description => 'Stuff used variously for development.',
-                  requires => { 'Smart::Comments' => 0,
-                                'Math::BigRat'    => 0,
-                                'B::Concise'      => 0,
-                              },
-                },
-           },
-      },
+   META_MERGE =>
+   { resources =>
+     { homepage =>
+       'http://user42.tuxfamily.org/math-polynomial-horner/index.html',
+     },
+     optional_features =>
+     { maximum_devel =>
+       { description => 'Stuff used variously for development.',
+         requires => { 'Smart::Comments' => 0,
+                       'Math::BigRat'    => 0,
+                       'B::Concise'      => 0,
+                     },
+       },
+     },
+   },
   );

@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# Copyright 2007, 2008, 2009, 2010 Kevin Ryde
+# Copyright 2007, 2008, 2009, 2010, 2011 Kevin Ryde
 
 # This file is part of Math-Polynomial-Horner.
 #
@@ -18,7 +18,7 @@
 # with Math-Polynomial-Horner.  If not, see <http://www.gnu.org/licenses/>.
 
 
-use 5.004;
+use 5.006;
 use strict;
 use warnings;
 use Test::More tests => 168;

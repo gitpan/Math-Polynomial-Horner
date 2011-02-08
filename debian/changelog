@@ -1,5 +1,5 @@
-libmath-polynomial-horner-perl (2-1) unstable; urgency=low
+libmath-polynomial-horner-perl (3-1) unstable; urgency=low
 
   * Packaged version.
 
- -- Kevin Ryde <user42@zip.com.au>  Thu, 16 Sep 2010 08:31:16 +1000
+ -- Kevin Ryde <user42@zip.com.au>  Sun, 06 Feb 2011 16:43:01 +1100
